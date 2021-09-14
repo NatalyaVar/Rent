@@ -56,11 +56,6 @@ public class RentTest extends RentPage {
         reportTime(m);
     }
 
-
-
-
-
-
     public static void reportTime (Long m) throws IOException {
         Writer fstream = new OutputStreamWriter(new FileOutputStream(fileOutRentFull, true), StandardCharsets.UTF_8);
         try {
@@ -70,6 +65,4 @@ public class RentTest extends RentPage {
             fstream.close();
         }
     }
-
-
 }

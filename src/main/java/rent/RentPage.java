@@ -24,21 +24,17 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.io.*;
 import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
-
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$;
 import static rent.MyUtils.*;
-
-
 
 public class RentPage extends RentElements {
     public RentPage() throws IOException { }
@@ -70,7 +66,6 @@ public class RentPage extends RentElements {
     int check;
     int num;
     int rnd;
-
 
     @BeforeClass
     public static void setUp() throws IOException {
@@ -113,79 +108,6 @@ public class RentPage extends RentElements {
             e.printStackTrace();
         }
     }
-
-
-/*
- public DamageCommonPage() throws IOException { }
-
-    private WebDriverWait wait = new WebDriverWait(driver, n);
-    private WebDriverWait wait1 = new WebDriverWait(driver, n1);
-    JavascriptExecutor je = (JavascriptExecutor) driver;
-
-    static String timeStamp = new SimpleDateFormat("yyyy-MM-dd_HH:mm").format(Calendar.getInstance().getTime());
-    static String reportsPathCommonFull = timeStamp.replace(":", "_").replace("-", "_") + "_" + reportsPathCommon;
-    static String fileOutCommonFull = reportsPathCommonFull + fileOutCommon;
-
-    private static String userName = "#UserName";
-    private static String password = "#Password";
-    private static String enterBtn = "#Login1 > tbody > tr > td > table > tbody > tr:nth-child(6) > td > a";
-    private static String pathInfoTxt = "Система страхования";
-    private static String pathInfo = "#PathInfo > a";
-    int i;
-    int j;
-    int k;
-    int check;
-
-    List<String> linesUrl = readFileLines(fileURL);
-    public String dashboardUrl = linesUrl.get(3);
-    public String urlReestr = linesUrl.get(2);
-    Actions actionList = new Actions(driver);
-
-    @BeforeClass
-    public static void setUp() throws IOException {
-        Configuration.reportsFolder = reportsPathCommonFull;
-        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrFile, new File(reportsPathCommonFull + "0" + png));
-        try {
-            Writer fstream = new OutputStreamWriter(new FileOutputStream(fileOutCommonFull, true), StandardCharsets.UTF_8);
-            WebDriverRunner.setWebDriver(driver);
-            driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            try {
-                //Перейти на домашнюю страницу со страницы авторизации
-                List<String> lines = readFileLines(fileURL);
-                String baseUrl = lines.get(1);
-                String user = lines.get(4);
-                String passwordTxt = lines.get(5);
-                open(baseUrl);
-                $(userName).shouldBe(visible).setValue(user);
-                $(password).setValue(passwordTxt);
-                $(enterBtn).shouldBe(visible).click();
-                sleep(1000);
-                $(pathInfo).shouldBe(visible);
-                String title = driver.getTitle();
-                File scrFile1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-                FileUtils.copyFile(scrFile1, new File(reportsPathCommonFull + "0" + png));
-                if (!(title.contains(pathInfoTxt))) {
-                    fstream.write("\n;;Не открылась страница 'Система страхования'" + err);
-                } else {
-                    fstream.write("\n\n;;Открылась страница 'Система страхования'" + ok);
-                    fstream.write("\n\nДата, время начала выполнения теста;Номер теста;Описание шагов;Результат выполнения");
-                }
-                sleep(1000);
-
-            } finally {
-                fstream.flush();
-                fstream.close();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    // 1
- */
-
 
 // 1
 //Открыть существующую карточку (случайным образом) и проверить, что данные из реестра со страницы 'Анализ ущерба' - 'Дела по ОИ' правильно отображаются в карточке выбранного дела
@@ -251,11 +173,6 @@ public void dealsPoisk() throws IOException {
     }
 }
 
-
-
-
-
-
 //4
     //Создать новую сделку - Проект
     //Имущество - случайная строка на 1 странице. Вид процедуры - "По итогам аукциона"
@@ -314,7 +231,6 @@ public void dealsPoisk() throws IOException {
                 Actions builder = new Actions(driver);
 
                 if (arrowBank.contains(expand)) {
-//
                     sleep(1000);
                     String str = bankDetailsLink.getText();
                     logger.debug(str);
@@ -329,7 +245,6 @@ public void dealsPoisk() throws IOException {
                     }
                 }
                 sleep(1000);
-
                                 //Выбрать банк
                 $(selectBankDetailsBtn).shouldBe(visible).click();
                 //Название банка
@@ -378,7 +293,6 @@ public void dealsPoisk() throws IOException {
                 i = periodicityList.size();
                 logger.debug("periodicityList.size()     " + i);
                 periodicityDropList.get(1).click(); //Круглосуточная
-
                 //Целевое использование
                 $(typeUse).shouldBe(visible).click();
                 $(typeUseDrop).shouldBe(visible);
@@ -413,9 +327,6 @@ public void dealsPoisk() throws IOException {
                 String startSumTxt = Double.toString(startSumDbl).replace(".", ",");
                 logger.debug("startSumTxt   " + startSumTxt);
                 $(startCost).shouldBe(visible).setValue(startSumTxt);
-
-
-
                 //Сохранить
                 $(saveBtn).shouldBe(visible).click();
                 List<WebElement> errorList = errorNoteList;
@@ -425,15 +336,9 @@ public void dealsPoisk() throws IOException {
                     String notetxt = note.getText();
                     logger.debug("Error  " + notetxt);
                 }
-
                 sleep(3000);
 
-
-
                 //Раздел "Документы" - Загрузить файлы
-
-
-
                 //Документы
                 List<WebElement> trListDoc = documentsTrList;
                 num = trListDoc.size();
@@ -456,10 +361,6 @@ public void dealsPoisk() throws IOException {
                     switch (k) {
                         case 0:
                             loadDoc(tr,docPath);
-
-
-
-
                             break;
                         case 1:
                             logger.debug("case 1   " + techPassport);
@@ -476,8 +377,7 @@ public void dealsPoisk() throws IOException {
                             sleep(1000);
                             driver.switchTo().frame(0);
                             break;
-
-                        case 2:
+                            case 2:
                             logger.debug("case 2   " + estimation);
                             loadDoc(tr,docPath);
                             //ввести номер и дату договор
@@ -505,121 +405,7 @@ public void dealsPoisk() throws IOException {
                             sleep(1000);
                             break;
                     }
-
                 }
-
-
-//                List<WebElement> docTr = documentsTr;
-//                num = docTr.size();
-//                logger.debug("Число строк   " + num);
-//                WebElement tr = docTr.get(0);
-//                $(tr).shouldBe(visible).click();
-//                String str = tr.getText();
-//                        logger.debug("str  " + str);
-//                je.executeScript("window.scrollBy(0,200);");
-////                WebElement loadImg = tr.findElement(By.cssSelector(tdImg));
-////                $(loadImg).shouldBe(visible).click();
-//                List<WebElement> docTdList = tr.findElements(By.cssSelector("td"));
-////                WebElement td = tr.findElement(By.cssSelector("td.k-state-border-down"));
-//                WebElement td = docTdList.get(3);
-//                td.click();
-//                sleep(2000);
-////                driver.switchTo().frame(0);
-//                $("input#files").uploadFile(new File(docPath));
-//                sleep(1000);
-/*
-   writer.write(beginLine + ";Загрузка файла");
-//        $("input#files").uploadFile(new File(path));
-//        sleep(2000);
- */
-
-/*
-    //Документы
-                List<WebElement> trList = documentsTrList;
-                num = trList.size();
-                logger.debug("Число строк  " + num);
-                sleep(1000);
-                for (i = 0; i < num - 1; i++) {
-                    logger.debug("Номер строки __" + i);
-                    List<WebElement> trList1 = documentsTrList;
-                    WebElement tr = trList1.get(i);
-                    WebElement docType = tr.findElement(By.cssSelector(docTypeLocator));
-                    String docTypeTxt = docType.getText();
-                    logger.debug("Тип документа   " + docTypeTxt);
-                    k = 0;
-                    if (docTypeTxt.contains(techPassport)) {
-                        k = 1;
-                    }
-                    if (docTypeTxt.contains(estimation)) {
-                        k = 2;
-                    }
-                    switch (k) {
-                        case 0:
-                            loadDoc(tr,docPath);
-
-
-
-
-                            break;
-                        case 1:
-                            logger.debug("case 1   " + techPassport);
-                            WebElement img1 = tr.findElement(By.cssSelector(newFileLocator));
-                            $(img1).shouldBe(visible).click();
-                            sleep(2000);
-                            $(dialogBtnOk).shouldBe(visible).click();
-                            driver.switchTo().frame(0);
-                            j = dialogBody.size();
-                            logger.debug("Список dialogBody   " + j);
-                            sleep(1000);
-                            $("input#files").uploadFile(new File(planPath));
-                            $(dialogLoadDataBtn).shouldBe(visible).click();
-                            sleep(1000);
-                            driver.switchTo().frame(0);
-                            break;
-
-                        case 2:
-                            logger.debug("case 2   " + estimation);
-                            loadDoc(tr,docPath);
-                            //ввести номер и дату договор
-                            List<WebElement> trList2 = documentsTrList;
-                            WebElement tr2 = trList2.get(i);
-                            String tr2Txt = tr2.getText();
-                            logger.debug(tr2Txt);
-                            WebElement numberEstimation = tr2.findElement(By.cssSelector(docNumberLocator));
-                            String numberTxt = generateString(random, validNum, 2);
-                            logger.debug("номер   " + numberTxt);
-                            $(numberEstimation).shouldBe(visible).click();
-                            actionList.clickAndHold(numberEstimation).sendKeys(Keys.chord(Keys.CONTROL, "a"), numberTxt).sendKeys(Keys.ENTER).release().build().perform();
-                            sleep(1000);
-                            Date dateNowEst = new Date();
-                            String dateNowTxt = DateFormatUtils.format(dateNowEst, "dd.MM.yyyy");
-//                            String dateEstimTxt =  dateNow.toString();
-                            logger.debug(dateNowTxt);
-                            List<WebElement> trList3 = documentsTrList;
-                            WebElement tr3 = trList3.get(i);
-                            String tr3Txt = tr3.getText();
-                            logger.debug(tr3Txt);
-                            WebElement dateEstimation = tr3.findElement(By.cssSelector(dateLocator));
-                            $(dateEstimation).shouldBe(visible).click();
-                            actionList.clickAndHold(dateEstimation).sendKeys(Keys.chord(Keys.CONTROL, "a"), dateNowTxt).sendKeys(Keys.ENTER).release().build().perform();
-                            sleep(1000);
-                            break;
-                    }
-
-                }
- */
-
-
-
-
-
-
-
-
-
-
-
-
             } catch (Exception e) {
                 logger.debug(e.getMessage());
                 screenCatch(screenshotPathFull, screen);
@@ -633,7 +419,6 @@ public void dealsPoisk() throws IOException {
            //        driver.navigate().to(dashboardUrl);
             fstream.flush();
             fstream.close();
-
         }
     }
 
@@ -652,7 +437,6 @@ public void dealsPoisk() throws IOException {
         fstream.write("\n" + beginLine + ";Управление имуществом организации - Создать сделку "  + inf);
         String screenshotPathFull = reportsPathRentFull + testNumber;
         screen = 0;
-
         try {
             try {
                 driver.navigate().to(urlHome);
@@ -693,9 +477,7 @@ public void dealsPoisk() throws IOException {
                 String arrowBank = $(bankArrow).shouldBe(visible).getAttribute("className");
                 logger.debug("arrowBank     " + arrowBank);
                 Actions builder = new Actions(driver);
-
                 if (arrowBank.contains(expand)) {
-//
                     sleep(1000);
                     String str = bankDetailsLink.getText();
                     logger.debug(str);
@@ -710,7 +492,6 @@ public void dealsPoisk() throws IOException {
                     }
                 }
                 sleep(1000);
-
                                 //Выбрать банк
                 $(selectBankDetailsBtn).shouldBe(visible).click();
                 //Название банка
@@ -785,7 +566,6 @@ public void dealsPoisk() throws IOException {
                 String startSumTxt = Double.toString(startSumDbl).replace(".", ",");
                 logger.debug("startSumTxt   " + startSumTxt);
                 $(startCost).shouldBe(visible).setValue(startSumTxt);
-
                 //Раздел "Документы" - Загрузить файлы
                 List<WebElement> docTr = documentsTr;
                 num = docTr.size();
@@ -810,20 +590,6 @@ public void dealsPoisk() throws IOException {
 //        $("input#files").uploadFile(new File(path));
 //        sleep(2000);
  */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             } catch (Exception e) {
                 logger.debug(e.getMessage());
                 screenCatch(screenshotPathFull, screen);
@@ -837,10 +603,8 @@ public void dealsPoisk() throws IOException {
            //        driver.navigate().to(dashboardUrl);
             fstream.flush();
             fstream.close();
-
         }
     }
-
 
     //3
     //Создать новую сделку - Проект - существующий ИП
@@ -857,7 +621,6 @@ public void dealsPoisk() throws IOException {
         String screenshotPathFull = reportsPathRentFull + testNumber;
         screen = 0;
         List<String> lines = readFileLines(filename3);
-
         try {
             try {
                 driver.navigate().to(urlHome);
@@ -902,8 +665,6 @@ public void dealsPoisk() throws IOException {
                     main.click();
                 }
                 */
-
-
 //                int buildNum = Integer.valueOf(buildTxt);
 //                if (buildNum > 30) {
 //                    num = 30;
@@ -914,8 +675,6 @@ public void dealsPoisk() throws IOException {
 //
 //                rnd = random.nextInt((num - 1));
 //                logger.debug("Случайная строка " + rnd);
-
-
 
 //                wait.until(ExpectedConditions.visibilityOf(buildHeader));
 //                List<WebElement> checkList = buildCheckBoxList;
@@ -957,7 +716,6 @@ public void dealsPoisk() throws IOException {
                 //Выбрать банк
                 $(selectBankDetailsBtn).shouldBe(visible).click();
                 //Название банка
-
                 String bankName = lines.get(1);
                 driver.switchTo().frame(0);
                 $(selectBankTable).shouldBe(visible).click();
@@ -992,7 +750,6 @@ public void dealsPoisk() throws IOException {
                 i = periodicityList.size();
                 logger.debug("periodicityList.size()     " + i);
                 periodicityDropList.get(1).click(); //Круглосуточная
-
                 //Целевое использование
                 $(typeUse).shouldBe(visible).click();
                 $(typeUseDrop).shouldBe(visible);
@@ -1035,7 +792,6 @@ public void dealsPoisk() throws IOException {
                 WebElement individ = contractorsList.get(1);
                 $(individ).shouldBe(visible).click();
                 je.executeScript("window.scrollBy(0,400);");
-
 
 /*
 Случайные данные - заменила на данные из файла
@@ -1105,11 +861,6 @@ String accountCorTxt = generateString(random, validNum, 20);
                 //ОГРНИП
                 String ogrnipTxt = lines.get(11);
                 $(individOgrnip).shouldBe(visible).setValue(ogrnipTxt);
-
-
-
-
-
                           //Сохранить
                 $(saveBtn).shouldBe(visible).click();
                 List<WebElement> errorList = errorNoteList;
@@ -1129,7 +880,6 @@ String accountCorTxt = generateString(random, validNum, 20);
                     WebElement elem = btnsList.get(0);
                     elem.click();
                 }
-
                 List<WebElement> successList = notificationSuccess;
                 num = successList.size();
                 logger.debug("Успешно  " + num);
@@ -1227,13 +977,6 @@ String accountCorTxt = generateString(random, validNum, 20);
                 }
 //                $(contractProjectBtn).shouldBe(visible).click();
 
-
-
-
-
-
-
-
             } catch (Exception e) {
                 logger.debug(e.getMessage());
                 screenCatch(screenshotPathFull, screen);
@@ -1310,8 +1053,6 @@ String accountCorTxt = generateString(random, validNum, 20);
                     main.click();
                 }
                 */
-
-
 //                int buildNum = Integer.valueOf(buildTxt);
 //                if (buildNum > 30) {
 //                    num = 30;
@@ -1322,8 +1063,6 @@ String accountCorTxt = generateString(random, validNum, 20);
 //
 //                rnd = random.nextInt((num - 1));
 //                logger.debug("Случайная строка " + rnd);
-
-
 
 //                wait.until(ExpectedConditions.visibilityOf(buildHeader));
 //                List<WebElement> checkList = buildCheckBoxList;
@@ -1444,7 +1183,6 @@ String accountCorTxt = generateString(random, validNum, 20);
                 $(individ).shouldBe(visible).click();
                 je.executeScript("window.scrollBy(0,400);");
 
-
 /*
 Случайные данные - заменила на данные из файла
                 String innTxt = generateString(random, validNum, 12);
@@ -1492,7 +1230,6 @@ String accountCorTxt = generateString(random, validNum, 20);
 String accountCorTxt = generateString(random, validNum, 20);
                 $(indivCorAccount).shouldBe(visible).setValue(accountCorTxt);
  */
-
                 //ФИО
                 String surname = lines.get(3);
                 String name = lines.get(4);
@@ -1582,20 +1319,13 @@ String accountCorTxt = generateString(random, validNum, 20);
                 String bankKpp = lines.get(24);
                 $(indivBankKpp).shouldBe(visible).setValue(bankKpp);
 
-
                 String bikTxt = lines.get(22);
                 $(indivBankBik).shouldBe(visible).setValue(bikTxt);
-
-
-
 
                 String accountTxt = lines.get(25);
                 $(indivAccount).shouldBe(visible).setValue(accountTxt);
                 String accountCorTxt = lines.get(26);
                 $(indivCorAccount).shouldBe(visible).setValue(accountCorTxt);
-
-
-
                           //Сохранить
                 $(saveBtn).shouldBe(visible).click();
                 List<WebElement> errorList = errorNoteList;
@@ -1635,64 +1365,6 @@ String accountCorTxt = generateString(random, validNum, 20);
                     $("input#files").uploadFile(new File(docPath));
                     $(dialogLoadDataBtn).shouldBe(visible).click();
                 }
-
-
-
-
-
-
-
-
-
-
-
-
-/*
- //Вид документа
-                $(typeDoc).shouldBe(visible).click();
-                $(typeDocDrop).shouldBe(visible);
-                sleep(600);
-                List<WebElement> typeDocList = typeDocDropList;
-                WebElement typeDocSelected = typeDocList.get(1);
-                String typeDocTxt = typeDocSelected.getText();
-                logger.debug("Вид договора   " + typeDocTxt);
-                typeDocSelected.click();
- */
-
-                /*
-                          //Раздел "Документы" - Загрузить файлы
-                List<WebElement> docTr = documentsTr;
-                num = docTr.size();
-                logger.debug("Число строк   " + num);
-                WebElement tr = docTr.get(0);
-                $(tr).shouldBe(visible).click();
-                String str = tr.getText();
-                logger.debug("str  " + str);
-                je.executeScript("window.scrollBy(0,200);");
-//                WebElement loadImg = tr.findElement(By.cssSelector(tdImg));
-//                $(loadImg).shouldBe(visible).click();
-                List<WebElement> docTdList = tr.findElements(By.cssSelector("td"));
-//                WebElement td = tr.findElement(By.cssSelector("td.k-state-border-down"));
-                WebElement td = docTdList.get(3);
-                td.click();
-                sleep(2000);
-                $("input#files").uploadFile(new File(docPath));
-                 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             } catch (Exception e) {
                 logger.debug(e.getMessage());
                 screenCatch(screenshotPathFull, screen);
@@ -1706,11 +1378,8 @@ String accountCorTxt = generateString(random, validNum, 20);
             //        driver.navigate().to(dashboardUrl);
             fstream.flush();
             fstream.close();
-
         }
     }
-
-
 
     //3 - Копия
     //Создать новую сделку - Проект -
@@ -1771,8 +1440,6 @@ String accountCorTxt = generateString(random, validNum, 20);
                     main.click();
                 }
                 */
-
-
 //                int buildNum = Integer.valueOf(buildTxt);
 //                if (buildNum > 30) {
 //                    num = 30;
@@ -1783,9 +1450,6 @@ String accountCorTxt = generateString(random, validNum, 20);
 //
 //                rnd = random.nextInt((num - 1));
 //                logger.debug("Случайная строка " + rnd);
-
-
-
 //                wait.until(ExpectedConditions.visibilityOf(buildHeader));
 //                List<WebElement> checkList = buildCheckBoxList;
 //                i = checkList.size();
@@ -1974,66 +1638,6 @@ String accountCorTxt = generateString(random, validNum, 20);
                     String notetxt = note.getText();
                     logger.debug("Error  " + notetxt);
                 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
- //Вид документа
-                $(typeDoc).shouldBe(visible).click();
-                $(typeDocDrop).shouldBe(visible);
-                sleep(600);
-                List<WebElement> typeDocList = typeDocDropList;
-                WebElement typeDocSelected = typeDocList.get(1);
-                String typeDocTxt = typeDocSelected.getText();
-                logger.debug("Вид договора   " + typeDocTxt);
-                typeDocSelected.click();
- */
-
-                /*
-                          //Раздел "Документы" - Загрузить файлы
-                List<WebElement> docTr = documentsTr;
-                num = docTr.size();
-                logger.debug("Число строк   " + num);
-                WebElement tr = docTr.get(0);
-                $(tr).shouldBe(visible).click();
-                String str = tr.getText();
-                logger.debug("str  " + str);
-                je.executeScript("window.scrollBy(0,200);");
-//                WebElement loadImg = tr.findElement(By.cssSelector(tdImg));
-//                $(loadImg).shouldBe(visible).click();
-                List<WebElement> docTdList = tr.findElements(By.cssSelector("td"));
-//                WebElement td = tr.findElement(By.cssSelector("td.k-state-border-down"));
-                WebElement td = docTdList.get(3);
-                td.click();
-                sleep(2000);
-                $("input#files").uploadFile(new File(docPath));
-                 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             } catch (Exception e) {
                 logger.debug(e.getMessage());
                 screenCatch(screenshotPathFull, screen);
@@ -2050,8 +1654,6 @@ String accountCorTxt = generateString(random, validNum, 20);
 
         }
     }
-
-
 
     //4
     //Удалить сделку
@@ -2104,7 +1706,6 @@ String accountCorTxt = generateString(random, validNum, 20);
                 if (arrowBank.contains(expand)) {
                     bankArrow.click();
                 }
-
                 //Выбрать банк
                 $(selectBankDetailsBtn).shouldBe(visible).click();
                 //Название банка
@@ -2129,16 +1730,6 @@ String accountCorTxt = generateString(random, validNum, 20);
                 arrowDown(objectArrow);
                 $(technical).shouldBe(visible).setValue(technicalTxt);
                 $(redevelopment).shouldBe(visible).setValue(redevelopmentTxt);
-
-
-
-
-
-
-
-
-
-
             } catch (Exception e) {
                 logger.debug(e.getMessage());
                 screenCatch(screenshotPathFull, screen);
@@ -2156,8 +1747,6 @@ String accountCorTxt = generateString(random, validNum, 20);
         }
     }
 
-
-
     //Загрузить документ
     public void loadDoc(WebElement tr, String path) {
         WebElement img2 = tr.findElement(By.cssSelector(newFileLocator));
@@ -2174,6 +1763,4 @@ String accountCorTxt = generateString(random, validNum, 20);
         sleep(1000);
         driver.switchTo().frame(0);
     }
-
-
 }
