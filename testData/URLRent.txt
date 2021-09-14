@@ -1,0 +1,7 @@
+Begin                                                           QQ URL для тестов Управление имуществом организации - Аренда
+http://mx.genix.pro:5050/Account/Login?ReturnUrl=%2F                                  QQ URL для страницы авторизации системы         baseUrl - BeforeClass
+http://mx.genix.pro:5050/RegistersView/RequestsContract        QQ Страница Сделки - все
+http://mx.genix.pro:5050/     QQ URL Домашняя страница
+user2                   QQ логин
+1                       QQ пароль
+End QQ

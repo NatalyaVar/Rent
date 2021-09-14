@@ -1,0 +1,94 @@
+DEBUG RentPage:278 - 4_
+DEBUG RentPage:291 - Имущество - здания - 271
+DEBUG RentPage:301 - Случайная строка 13
+DEBUG RentPage:308 - checkList.size()___30
+DEBUG RentPage:322 - arrowBank     k-icon k-i-arrow-60-down k-panelbar-expand
+DEBUG RentPage:329 - Банковские реквизиты р/с в
+DEBUG RentPage:366 - arrowObject     k-icon  k-panelbar-expand k-i-arrow-60-down
+DEBUG RentPage:377 - procedList   8
+DEBUG RentPage:379 - Вид процедуры   По итогам аукциона
+DEBUG RentPage:278 - 4_
+DEBUG RentPage:291 - Имущество - здания - 271
+DEBUG RentPage:301 - Случайная строка 16
+DEBUG RentPage:308 - checkList.size()___30
+DEBUG RentPage:322 - arrowBank     k-icon k-i-arrow-60-down k-panelbar-expand
+DEBUG RentPage:329 - Банковские реквизиты р/с в
+DEBUG RentPage:366 - arrowObject     k-icon  k-panelbar-expand k-i-arrow-60-down
+DEBUG RentPage:377 - procedList   8
+DEBUG RentPage:379 - Вид процедуры   По итогам аукциона
+DEBUG RentPage:382 - периодичность использования   
+DEBUG RentPage:388 - periodicityList.size()     3
+DEBUG RentPage:633 - element not interactable
+  (Session info: chrome=76.0.3809.132)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'MSI', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.132, chrome: {chromedriverVersion: 75.0.3770.140 (2d9f97485c7b..., userDataDir: C:\Users\Natalya\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:49632}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 69ceebe38f2186d143864daa207e0217
+DEBUG RentPage:278 - 4_
+DEBUG RentPage:291 - Имущество - здания - 271
+DEBUG RentPage:301 - Случайная строка 6
+DEBUG RentPage:308 - checkList.size()___30
+DEBUG RentPage:322 - arrowBank     k-icon k-i-arrow-60-down k-panelbar-expand
+DEBUG RentPage:329 - Банковские реквизиты р/с в
+DEBUG RentPage:366 - arrowObject     k-icon  k-panelbar-expand k-i-arrow-60-down
+DEBUG RentPage:377 - procedList   8
+DEBUG RentPage:379 - Вид процедуры   По итогам аукциона
+DEBUG RentPage:382 - периодичность использования   
+DEBUG RentPage:388 - periodicityList.size()     3
+DEBUG RentPage:398 - Случайное целевое использование  16
+DEBUG RentPage:401 - Целевое использование  торговые помещения
+DEBUG RentPage:278 - 4_
+DEBUG RentPage:291 - Имущество - здания - 271
+DEBUG RentPage:301 - Случайная строка 15
+DEBUG RentPage:308 - checkList.size()___30
+DEBUG RentPage:322 - arrowBank     k-icon k-i-arrow-60-down k-panelbar-expand
+DEBUG RentPage:329 - Банковские реквизиты р/с в
+DEBUG RentPage:366 - arrowObject     k-icon  k-panelbar-expand k-i-arrow-60-down
+DEBUG RentPage:377 - procedList   8
+DEBUG RentPage:379 - Вид процедуры   По итогам аукциона
+DEBUG RentPage:382 - периодичность использования   
+DEBUG RentPage:388 - periodicityList.size()     3
+DEBUG RentPage:398 - Случайное целевое использование  39
+DEBUG RentPage:401 - Целевое использование  концертный зал
+DEBUG RentPage:278 - 4_
+DEBUG RentPage:291 - Имущество - здания - 271
+DEBUG RentPage:301 - Случайная строка 1
+DEBUG RentPage:308 - checkList.size()___30
+DEBUG RentPage:322 - arrowBank     k-icon k-i-arrow-60-down k-panelbar-expand
+DEBUG RentPage:329 - Банковские реквизиты р/с в
+DEBUG RentPage:366 - arrowObject     k-icon  k-panelbar-expand k-i-arrow-60-down
+DEBUG RentPage:377 - procedList   8
+DEBUG RentPage:379 - Вид процедуры   По итогам аукциона
+DEBUG RentPage:382 - периодичность использования   
+DEBUG RentPage:388 - periodicityList.size()     3
+DEBUG RentPage:398 - Случайное целевое использование  18
+DEBUG RentPage:401 - Целевое использование  помещения религиозного назначения
+DEBUG RentPage:410 - Вид документа   29188 Договор аренды объекта недвижимого имущества, закрепленного на праве оперативного управления за государственным учреждением города Москвы/органом власти города Москвы (Предоставление имущества исполнителю Государственного контракта)
+DEBUG RentPage:417 - endActionTxt  17.06.2022
+DEBUG RentPage:423 - startSumTxt   918790,51
+DEBUG RentPage:449 - Число строк  7
+DEBUG RentPage:452 - Номер строки __0
+DEBUG RentPage:457 - Тип документа   Правоустанавливающие документы на земельный участок
+DEBUG RentPage:2178 - Список dialogBody   1
+DEBUG RentPage:452 - Номер строки __1
+DEBUG RentPage:457 - Тип документа   Технический паспорт БТИ/Поэтажный план
+DEBUG RentPage:474 - case 1   Технический паспорт БТИ
+DEBUG RentPage:481 - Список dialogBody   0
+DEBUG RentPage:452 - Номер строки __2
+DEBUG RentPage:457 - Тип документа   Экспликация
+DEBUG RentPage:2178 - Список dialogBody   1
+DEBUG RentPage:452 - Номер строки __3
+DEBUG RentPage:457 - Тип документа   Технико-экономическое обоснование
+DEBUG RentPage:2178 - Список dialogBody   1
+DEBUG RentPage:452 - Номер строки __4
+DEBUG RentPage:457 - Тип документа   Отчет об оценке рыночной стоимости
+DEBUG RentPage:490 - case 2   Отчет
+DEBUG RentPage:2178 - Список dialogBody   1
+DEBUG RentPage:496 - Отчет об оценке рыночной стоимости Заявитель Петров Петр Петрович 21.09.2019 16:25
+DEBUG RentPage:499 - номер   31
+DEBUG RentPage:506 - 21.09.2019
+DEBUG RentPage:510 - Отчет об оценке рыночной стоимости Заявитель a31 Петров Петр Петрович 21.09.2019 16:25
+DEBUG RentPage:452 - Номер строки __5
+DEBUG RentPage:457 - Тип документа   Правоустанавливающие документы на здание
+DEBUG RentPage:2178 - Список dialogBody   1
